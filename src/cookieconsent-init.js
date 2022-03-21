@@ -3,6 +3,7 @@ var cc = initCookieConsent();
 
 // run plugin with your configuration
 cc.run({
+
     current_lang: 'cs',
     autoclear_cookies: true,                   // default: false
     page_scripts: true,                        // default: false
@@ -35,6 +36,19 @@ cc.run({
         // ...
     },
 
+    gui_options: {
+        consent_modal: {
+            layout: 'bar',               // box/cloud/bar
+            position: 'bottom center',     // bottom/middle/top + left/right/center
+            transition: 'slide',           // zoom/slide
+            swap_buttons: false            // enable to invert buttons
+        },
+        settings_modal: {
+            layout: 'box',                 // box/bar
+            // position: 'left',           // left/right
+            transition: 'slide'            // zoom/slide
+        }
+    },
     languages: {
         'cs': {
             consent_modal: {
@@ -63,7 +77,7 @@ cc.run({
                 ],
                 blocks: [
                     {
-                        title: 'Používání souborů cookie📢',
+                        title: 'Používání souborů cookie',
                         // TODO - doplnit odkaz na Zásady ochrany osobních údajů.
                         description: 'Soubory cookie používáme k zajištění základních funkcí webových stránek a ke zlepšení vašeho online zážitku. U každé kategorie si můžete zvolit, zda se chcete přihlásit nebo odhlásit, kdykoli budete chtít. Další podrobnosti týkající se souborů cookie a dalších citlivých údajů naleznete v úplném znění. <a href="#" class="cc-link">Zásady ochrany osobních údajů</a>.'
                     }, {
